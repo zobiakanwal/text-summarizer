@@ -1,0 +1,387 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    /* background: #000; */
+    background-image: url("./bg0.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    color: #e4e4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+/* Space Background */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.w3schools.com/w3images/stars.jpg') center center/cover no-repeat;
+    animation: starMove 30s infinite linear;
+}
+
+.nebula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.w3schools.com/w3images/nebula.jpg') center center/cover no-repeat;
+    animation: nebulaMove 80s infinite linear;
+}
+
+@keyframes starMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes nebulaMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Container */
+/* .container {
+    background: rgba(28, 37, 45, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px 	#1434A4, #8e44ad;
+    padding: 40px;
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+    animation: float 5s ease-in-out infinite;
+} */
+
+
+.container {
+    background: rgba(28, 37, 45, 0.85); /* Darker, more refined background */
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(20, 52, 164, 0.5), 
+                0 0 25px rgba(142, 68, 173, 0.4), 
+                0 0 35px rgba(20, 52, 164, 0.3); /* Softer, more elegant glow */
+    position: relative; /* For border animation */
+    overflow: hidden; /* Prevents border animation overflow */
+    border: 5px solid transparent; /* Transparent border initially */
+    background-clip: padding-box; /* Ensures background doesn’t overlap border */
+    animation: neon-border 6s ease-in-out infinite; /* Slower, smoother animation */
+}
+
+/* Subtle Neon Border Animation */
+@keyframes neon-border {
+    0% {
+        border-color: transparent;
+    }
+    25% {
+        border-color: rgba(20, 52, 164, 0.6); /* Soft blue */
+    }
+    50% {
+        border-color: rgba(142, 68, 173, 0.6); /* Light purple */
+    }
+    75% {
+        border-color: rgba(0, 229, 255, 0.5); /* Soft cyan */
+    }
+    100% {
+        border-color: rgba(20, 52, 164, 0.6); /* Soft blue */
+    }
+}
+
+
+
+
+/* Heading and Subheading */
+header h1 {
+    font-size: 3rem;
+    color: 	;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px #1434A4;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+.author {
+    font-size: 1rem;
+    color: #a3a4a4;
+    margin-top: 4px;
+    margin-bottom: 3px;
+    font-style: italic;
+}
+
+/* Input Area */
+.input-area {
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    background: #2c3e50;
+    color: #e4e4e4;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    resize: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 15px	#1434A4;
+}
+
+/* Submit Button */
+/* .submit-button {
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #8e44ad, #1434A4);
+    color: white;
+    border: none;
+    border-radius: 50px; 
+    font-size: 1.2rem;
+    font-weight: 600; 
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 5px; 
+}
+*/
+
+/* Hover effect */
+/* .submit-button:hover {
+    background: linear-gradient(145deg, #1434A4, #8e44ad);
+    transform: translateY(-4px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); 
+} */
+
+
+.submit-button {
+    padding: 16px 38px;
+    background: linear-gradient(135deg, #8e44ad, #1434A4);
+    color: #ffffff;
+    border: none;
+    border-radius: 100px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    margin-top: 8px;
+}
+
+/* Hover effect */
+.submit-button:hover {
+    background: linear-gradient(135deg, #1434A4, #8e44ad);
+    box-shadow: 0 8px 24px rgba(20, 52, 164, 0.4), 0 4px 12px rgba(142, 68, 173, 0.3);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Active (click) effect */
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+/* Inner subtle neon border */
+.submit-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 100px;
+    padding: 1px;
+    background: linear-gradient(135deg, #8e44ad, #1434A4);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    opacity: 0.6;
+}
+
+
+
+
+
+
+/* Result Section */
+.result {
+    background: rgba(44, 62, 80, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.result h2 {
+    font-size: 1.8rem;
+    color: 	rgb(204, 191, 219);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.result p {
+    font-size: 1.1rem;
+    color: #e4e4e4;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1rem;
+    color: #c2c2c2;
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* Tech Stack Info */
+.tech-stack-info {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden initially */
+}
+
+.tech-stack-info .popup-box {
+    color: white;
+}
+
+.tech-stack-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-stack-info li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.tech-stack-info .close-popup {
+    padding: 10px 20px;
+    background: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.tech-stack-info .close-popup:hover {
+    background: #8e44ad;
+}
+
+
+.tech-stack-btn {
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #8e44ad, #1434A4);
+    color: #ffffff;
+    border: none;
+    border-radius: 100px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Micro-shadow glow on hover */
+.tech-stack-btn:hover {
+    background: linear-gradient(135deg, #1434A4, #8e44ad);
+    box-shadow: 0 8px 24px rgba(20, 52, 164, 0.4), 0 4px 12px rgba(142, 68, 173, 0.3);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Smooth pulse when active (click) */
+.tech-stack-btn:active {
+    transform: scale(0.98);
+}
+
+/* Optional: soft neon border inside */
+.tech-stack-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 100px;
+    padding: 1px;
+    background: linear-gradient(135deg, #8e44ad, #1434A4);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    opacity: 0.6;
+}
+
+
+
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

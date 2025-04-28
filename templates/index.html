@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer - Zobia Kanwal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background">
+        <div class="stars"></div>
+        <div class="nebula"></div>
+        <div class="graphic-elements"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <header>
+            <h1>Text Summarizer</h1>
+            <p class="subheading">Summarize your text and listen to it in seconds.</p>
+            <p class="author">Created by Zobia Kanwal</p>
+        </header>
+
+        <div class="input-area">
+            <form method="POST">
+                <textarea name="text" rows="6" placeholder="Paste your text here..." required>{{ input_text }}</textarea>
+                <button type="submit" class="submit-button">Summarize</button>
+            </form>
+        </div>
+
+        {% if summary %}
+            <div class="result">
+                <h2>Summary:</h2>
+                <p>{{ summary }}</p>
+                <audio controls>
+                    <source src="{{ url_for('static', filename='summary.mp3') }}" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        {% endif %}
+
+        <!-- Playful Tech Stack Info -->
+        <div class="tech-stack-info" id="techStackPopup">
+            <div class="popup-box">
+                <h3>Tech Stack Used:</h3>
+                <ul>
+                    <li>Backend: Python & Flask</li>
+                    <li>Frontend: HTML5, CSS3, JavaScript</li>
+                    <li>Hosting: Heroku</li>
+                    <li>Graphics: CSS Animations</li>
+                </ul>
+                <button class="close-popup" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+
+        <button class="tech-stack-btn" onclick="showPopup()">Tech Stack</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Zobia Kanwal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showPopup() {
+            document.getElementById('techStackPopup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('techStackPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
